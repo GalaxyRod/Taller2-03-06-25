@@ -27,16 +27,18 @@ router.get('/findAll/view', async (req, res) => {
 });
 
 router.get('/search', async (req, res) => {
+    let lower = parseFloat(req.query.lower);
+    let higher = parseFloat(req.query.higher);
     try {
         const fotos = await Foto.findAll({ 
           attributes: { 
             exclude: ["updatedAt"] 
           },
-          /*where: {
+          where: {
             calificacion: {
               [Op.between]: [lower, higher]
             }
-          } */
+          } 
         });
         res.render('search', { title: 'Rating', arrFotos: fotos });
         
@@ -44,6 +46,19 @@ router.get('/search', async (req, res) => {
         res.status(400).send(error);
     }
 });
+
+/*router.get('/filter', (req, res) => {
+    const { lower, higher } = req.query;
+    const min = parseInt(lower);
+    const max = parseInt(higher);
+
+    if (isNaN(min) || isNaN(max)) {
+        return res.status(400).json({ error: "Parámetros inválidos" });
+    }
+
+    const filteredFotos = where:{ calificacion:{[Op.between]: [min, max]}}
+    res.json(filteredFotos);
+});*/
 
 router.get('/findAll/json',function(req, res, next) {
 

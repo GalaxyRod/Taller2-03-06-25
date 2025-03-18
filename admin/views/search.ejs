@@ -26,9 +26,8 @@
                         <tr>
                             <th>Id</th>
                             <th>Título</th>
-                            <th>Descripción</th>
-                            <th>Ruta</th>
-                            <th>Fecha de creación</th>
+                            <th>calificacion</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
@@ -36,10 +35,7 @@
                             <tr>
                                 <td><%= foto.id %></td>
                                 <td><%= foto.titulo %></td>
-                                <td><%= foto.descripcion %></td>
-                                <td><%= foto.ruta %></td>
-                                <td><%=
-                                foto.createdAt.toLocaleDateString('en-US')%></td>
+                                <td><%= foto.calificacion %></td>
                             </tr>
                             <% }); %>
                     </tbody>
@@ -53,6 +49,5 @@
         uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-
         zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
-        <script src="/javascripts/dashboard.js"></script>
     </body>
 </html
