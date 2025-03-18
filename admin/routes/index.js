@@ -17,5 +17,9 @@ router.get('/photos', async function(req, res, next) {
   const response = await axios.get(URL) 
   res.render('fotos', { title: 'Fotos', fotos: response.data });
   })
+  
+router.get('/findAllByRate', (req, res) => {
+  res.render('findAllByRate'); // Renderiza el archivo findAllByRate.ejs
+})
 
 module.exports = router;
